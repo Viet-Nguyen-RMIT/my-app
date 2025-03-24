@@ -29,9 +29,7 @@ export function userContextProvider ({ children }: { children: React.ReactNode }
         setUsers(DEFAULT_USERS);
     }
 
-    const login : (username: string, password: string) => boolean{
-        const foundUser = users.find(
-            (u) => username === u.username
-        )
-    }
+    const login = (username: string, password: string) : Boolean =>{
+        return true
+    };
 }
