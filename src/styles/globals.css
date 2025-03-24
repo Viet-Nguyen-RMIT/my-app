@@ -1,26 +1,76 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: white;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.navBar{
+  font-size: x-large;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.navBar li{
+  float: left;
+  display: inline;
 }
+
+.navBar li a{
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.navBar li:hover{
+  background-color: blue;
+}
+
+.navBar .right{
+  float: right;
+}
+
+/* .navBar .active{
+  background-color: blue;
+}*/
+
+.formTitle{
+  text-align: center;
+  padding: 10px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.input-container{
+  font-size: x-large;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  justify-content: center;
+  border: 3px solid black;
+  margin: auto;
+  color: black;
+  position: relative;
+  top: 200px;
+}
+
+.input-container button, .inputBox{
+  width: 75%;
+  border: black 2px solid;
+  border-radius: 6px;
+  margin:auto;
+  background: transparent;
+  padding: 10px;
+  margin-top:25px;
+}
+
+
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
