@@ -1,12 +1,15 @@
 import React, {useState} from "react";
-import Login, { DEFAULT_USERS } from "./login";
 import Header from "@/Component/header";
+import { useAuth } from "./Context/userContext";
 export default function Home(){
+
+  const {user, logout} = useAuth();
+    
+  const username = user?.username;
 
   return(
     <>
-      <Header></Header>
-      <div>Hello</div>
+     <div>Hello {username}</div>
     </>
   );
 }

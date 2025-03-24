@@ -12,7 +12,8 @@
   background-color: black;
 }
 
-.navBar li{
+.navBar li, .right-greet{
+  padding: 7px 8px;
   float: left;
   display: inline;
 }
@@ -20,14 +21,16 @@
 .navBar li a{
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
 }
 
 .navBar li:hover{
   background-color: blue;
 }
 
-.navBar .right{
+.navBar .right, .right-greet{
+  text-align: center;
+  color: white;
   float: right;
 }
 
