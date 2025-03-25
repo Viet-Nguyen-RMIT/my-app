@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <UserContextProvider>
       <Header></Header>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </UserContextProvider>
     
   );

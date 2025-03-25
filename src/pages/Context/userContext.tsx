@@ -1,10 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-export type User = {
-    id: string;
-    username: String;
-    password: String;
-    role: String;
-}
+import { DEFAULT_USERS, User, } from "../Types/User";
+import { Router, useRouter } from "next/router";
 
 interface UserContextType {
     user: User | null;
@@ -18,6 +14,7 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 export function UserContextProvider ({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<User | null>(null); 
     const [users, setUsers] = useState<User[]>([]);
+    const router = useRouter();
 
     useEffect(() =>{
 
@@ -26,10 +23,6 @@ export function UserContextProvider ({ children }: { children: React.ReactNode }
             setUsers(JSON.parse(existingUsers));
         }
         else{
-            const DEFAULT_USERS : User[] = 
-            [{id: "1", username: "Lecturer", password: "123", role:"Lecturer"},
-             {id: "2", username: "Tutor", password: "456", role:"Tutor"}
-            ];
             localStorage.setItem("Users", JSON.stringify(DEFAULT_USERS));
             setUsers(DEFAULT_USERS);
         }
@@ -41,8 +34,8 @@ export function UserContextProvider ({ children }: { children: React.ReactNode }
     },[]);
 
     const login = (username: string, password: string) : boolean =>{
-
-        const currentUser = users.find((u) => u.username == username && u.password == password);
+        
+        const currentUser = users.find((u) => u.username == username.trim().toLowerCase() && u.password == password.trim());
 
         if(currentUser){
             localStorage.setItem("CurrentUser", JSON.stringify(currentUser));
@@ -55,6 +48,7 @@ export function UserContextProvider ({ children }: { children: React.ReactNode }
     const logout = (): void => {
         setUser(null);
         localStorage.removeItem("CurrentUser");
+        router.push("/login");
     };
 
 
