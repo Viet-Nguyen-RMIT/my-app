@@ -1,10 +1,9 @@
-export type application = {
+export type Application = {
     id: string;
     applicantName: string;
-    content: string;
     availability: string;
-    courses: string[];
-    skills: string[];
-    credentials: string[];
+    courses: string;
+    skills?: string;
+    credentials?: string;
     date: string;
 }

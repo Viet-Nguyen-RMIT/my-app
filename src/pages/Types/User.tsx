@@ -1,8 +1,8 @@
 export type User = {
     id: string;
-    username: String;
-    password: String;
-    role: String;
+    username: string;
+    password: string;
+    role: string;
 }
 
 export const DEFAULT_USERS : User[] = 

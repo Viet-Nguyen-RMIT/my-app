@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/tutor.css";
 import type { AppProps } from "next/app";
 import { UserContextProvider } from "./Context/userContext";
 import Header from "@/Component/header";

@@ -11,7 +11,7 @@ export default function Header(){
             <li><Link href="/">Home</Link></li>
             <li><Link href="#">About Us</Link></li>
             <li><Link href="#">Contact</Link></li>
-            {user ? user.role == "Lecturer" ? <li><Link href="#">View Application</Link></li>: <li><Link href="#">Apply</Link></li> : <></>}
+            {user ? user.role == "Lecturer" ? <li><Link href="#">View Application</Link></li>: <li><Link href="./tutor">Apply</Link></li> : <></>}
             {user ? <>
                 <li className="right"><button onClick={logout}>Logout</button></li>
                 <div className="right-greet">Hello, {user.username}!</div>

@@ -27,7 +27,6 @@ export default function Login(){
     return(
         <>
         <div>
-            
             <form className="input-container" onSubmit={handleSubmit}>
             <header className="formTitle">SIGN IN</header>
             {error && 
